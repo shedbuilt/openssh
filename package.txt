@@ -1,0 +1,5 @@
+NAME=openssh
+VERSION=7.5p1
+REVISION=1
+SRC=http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-7.5p1.tar.gz
+SRCMD5=652fdc7d8392f112bef11cacf7e69e23
