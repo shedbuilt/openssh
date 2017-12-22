@@ -16,3 +16,6 @@ mkdir -pv ${SHED_FAKEROOT}/usr/share/man/man1
 install -v -m644 contrib/ssh-copy-id.1 ${SHED_FAKEROOT}/usr/share/man/man1
 install -v -m755 -d ${SHED_FAKEROOT}/usr/share/doc/openssh-7.5p1
 install -v -m644 INSTALL LICENCE OVERVIEW README* ${SHED_FAKEROOT}/usr/share/doc/openssh-7.5p1
+mv "${SHED_FAKEROOT}/etc/ssh/ssh_config" "${SHED_FAKEROOT}/etc/ssh/ssh_config.default"
+mv "${SHED_FAKEROOT}/etc/ssh/sshd_config" "${SHED_FAKEROOT}/etc/ssh/sshd_config.default"
+echo "PermitRootLogin yes" >> "${SHED_FAKEROOT}/etc/ssh/sshd_config.default"
