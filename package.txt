@@ -1,5 +1,9 @@
 NAME=openssh
-VERSION=7.6p1
+VERSION=7.7p1
 REVISION=1
-SRC=http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-7.6p1.tar.gz
-SRCMD5=06a88699018e5fef13d4655abfed1f63
+SRC=http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-7.7p1.tar.gz
+SRCMD5=68ba883aff6958297432e5877e9a0fe2
+BUILDDEPS=openssl
+INSTALLDEPS=openssl
+OPTIONS=bootstrap|release (docs)
+DEFAULTS=release docs
