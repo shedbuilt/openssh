@@ -1,10 +1,4 @@
 #!/bin/bash
-if [ ! -e /etc/ssh/ssh_config ]; then
-    ln -sfv /usr/share/defaults/etc/ssh/ssh_config /etc/ssh/ssh_config
-fi
-if [ ! -e /etc/ssh/sshd_config ]; then
-    ln -sfv /usr/share/defaults/etc/ssh/sshd_config /etc/ssh/sshd_config
-fi
 getent passwd sshd
 if [ $? -ne 0 ]; then
     install -vdm700 /var/lib/sshd &&

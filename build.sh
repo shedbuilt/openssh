@@ -23,9 +23,9 @@ mkdir -pv "${SHED_FAKE_ROOT}/usr/share/man/man1" &&
 install -v -m644 contrib/ssh-copy-id.1 "${SHED_FAKE_ROOT}/usr/share/man/man1" &&
 # Install Default Config Files
 echo "PermitRootLogin yes" >> "${SHED_FAKE_ROOT}/etc/ssh/sshd_config" &&
-install -vdm755 "${SHED_FAKE_ROOT}/usr/share/defaults/etc/ssh" &&
-mv "${SHED_FAKE_ROOT}/etc/ssh/ssh_config" "${SHED_FAKE_ROOT}/usr/share/defaults/etc/ssh" &&
-mv "${SHED_FAKE_ROOT}/etc/ssh/sshd_config" "${SHED_FAKE_ROOT}/usr/share/defaults/etc/ssh" || exit 1
+install -vdm755 "${SHED_FAKE_ROOT}${SHED_PKG_DEFAULTS_INSTALL_DIR}/etc/ssh" &&
+mv "${SHED_FAKE_ROOT}/etc/ssh/ssh_config" "${SHED_FAKE_ROOT}${SHED_PKG_DEFAULTS_INSTALL_DIR}/etc/ssh" &&
+mv "${SHED_FAKE_ROOT}/etc/ssh/sshd_config" "${SHED_FAKE_ROOT}${SHED_PKG_DEFAULTS_INSTALL_DIR}/etc/ssh" || exit 1
 # Install Documentation
 if [ -n "${SHED_PKG_LOCAL_OPTIONS[docs]}" ]; then
     install -v -dm755 "${SHED_FAKE_ROOT}${SHED_PKG_LOCAL_DOCDIR}" &&
